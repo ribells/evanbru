@@ -1,0 +1,65 @@
+Hi Evan,
+
+I included our Mentorship Group so Danielle can note our discussion here...
+
+Thanks for getting back to me. I have put together a Jupyter Notebook we can discuss next week. Please confirm that you can load the notebook within Jupyter fine.
+
+But first I will confirm Tuesdays and 10am for our weekly meeting time. I will suggest that Danielle and I both update our calendars.
+
+Here are my thoughts on your e-mail message:
+
+Below is the link to the datasets:
+https://www.ginniemae.gov/data_and_reports/disclosure_data/Pages/DisclosureHistory.aspx
+
+Thank you. I am successfully registered as a user.
+ 
+as well as the link to the dataset structure:
+https://www.ginniemae.gov/doing_business_with_ginniemae/investor_resources/mbs_disclosure_data/Lists/LayoutsAndSamples/Attachments/302/hllmon1_layout.pdf
+
+I see that they use a fixed character text format. That brings me back to 1988 when I received a tape feed from MasterCard and Visa for all transactions for 92 banks that my employer managed. My job back then was to get all that data into a massive DB2 (IBM standard) database and then do some fraud querying (as well as determine member bank chargebacks for the cost of my service and fees from MasterCard and Visa). I haven't worked with it much since then as I am more used to getting data as comma delimited, tab delimited or with some meta data injected into each record (JSON or XML come to mind prominently).
+ 
+I had to set up an account under evanaltman88@gmail.com. The answer to the security question is Heschel. If you don't want to set up an account, you can login with mine.
+
+I thought it better to use my own and avoid the risk of somehow losing you privileges.
+ 
+I think i will focus on 
+
+HMBS PORTFOLIO - LOAN LEVEL, MONTHLY ADJUSTABLE 
+
+I noticed that a single month's data was 2.4 gigabytes, once decompressed from the archive format I downloaded. That's a lot so I immediately reduced it to the first 30000 lines (records). Let's work with representative data first and then we can build up to using datasets that are that large.
+ 
+or
+HMBS PORTFOLIO - LOAN LEVEL, FIXED AND ANNUAL ADJUSTABLE
+
+I am guessing that dataset is also large, but perhaps a bit smaller?
+ 
+I think the interesting part of the project is figuring out how to get the data from the file to the database and then how to do some analysis on the database with Python.
+
+I agree! I would start by converting the fixed character format into a CSV format (that's the convention people would use when doing a shared analysis across people or organizations). You might find that easy to do as you just need to insert a comma at the end of each fixed width field of text. I will leave that to you as an assignment to see how it goes for you. I will help you when we discuss if you need help.
+
+The notebook I have attached uses CSV files. I had already started on it with the Zillow Real Estate data I downloaded from here:
+https://www.kaggle.com/datasets/zillow/zecon?resource=download
+
+If you download that archive, and decompress it, you will find the County_time_series.csv file that the notebook uses. The first two cells of the notebook come from a student project that looked at microfinancing by country for a company specializing in international microfinancing loans. You'll see that one can directly access a dataset on the web via a URL.
+
+You can open the County_time_series.csv in a text editor to see its format. The first row is a header row that identifies all the names of the attributes packed into each record (line). Note how sparse the data is for some attributes (when you see two commas in succession, that attribute is null).
+
+See if you can follow along on how I subselected attributes from the whole file, put the data into a relational database (one of the database types we will discuss together), queried the data, and then output another CSV file that Python could then use to do analysis and visualization. If you follow along OK, see if you can take the CSV file you generate from your Ginny Mae data and do something similar for the attributes you are interested in.
+
+I chose the example of an arbitrary query of interest whereby I listed out all counties (by region ID) that have median house prices between $200,000 and $205,000 dollars. This is a price range where Rhode Island is way underrepresented and thus keeping home buyers out of the market as being too expensive. No mortgage data to come from those folks. At one point, there were only 62 houses on the market between $150,000 and $250,000 in the state. And yet, there are about 10,000 renters who could afford to buy in that range (and many more than 62 currently trying to find such a situation).
+ 
+I'm still at the beginning stages of learning Python, but I think with the help of ChatGPT, I could make some progress on analyzing the file.
+
+I will be super interested to see how you use ChatCGT in that way. That was the genre of use that introduced me to ChatGPT, as part of a fascinating article with many case studies. It's very compelling as I am sure I wasted a lot of time writing code from scratch. Then again, I got paid well to do so and could afford a home above that price range. Ha ha ha. By the way, I finish paying off a 30-year mortgage next month, just as the adjustable rate was going to go from 4.5% to 6.5%. Your project can be a bit of a celebration for me!
+ 
+Let me know your thoughts on using AI to help with writing code.
+
+I'm fine with it if the process works for you. A concern is that I've read ChatGPT code can be quite unconventional and thus difficult for humans to read who are used to popular conventions. But I don't think that goes for relational databases and querying/reporting on them.
+ 
+Also Tuesday at 10 am is better for me.
+
+Sounds great! See you Tuesday, 10am, at:
+https://risd.zoom.us/j/4881835444?pwd=c1l5YnplWGtsenBheEVaVFVOTHZGZz09
+
+Cheers,
+Bruce
